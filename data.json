@@ -31,7 +31,6 @@
       "brand": "Apple",
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
-      
       "images": [
         "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
         "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
@@ -1930,6 +1929,101 @@
       "rating": 0,
       "stock": null,
       "id": 104
+    },
+    {
+      "title": "black Perfume",
+      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+      "price": 40,
+      "discountPercentage": 15.66,
+      "rating": 4,
+      "stock": 52,
+      "brand": "Royal_Mirage",
+      "category": "fragrances",
+      "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/12/1.jpg",
+        "https://i.dummyjson.com/data/products/12/2.jpg",
+        "https://i.dummyjson.com/data/products/12/3.png",
+        "https://i.dummyjson.com/data/products/12/4.jpg",
+        "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
+      ],
+      "id": 105
+    },
+    {
+      "title": "black Perfume",
+      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+      "price": 40,
+      "discountPercentage": 15.66,
+      "rating": 4,
+      "stock": 52,
+      "brand": "Royal_Mirage",
+      "category": "fragrances",
+      "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/12/1.jpg",
+        "https://i.dummyjson.com/data/products/12/2.jpg",
+        "https://i.dummyjson.com/data/products/12/3.png",
+        "https://i.dummyjson.com/data/products/12/4.jpg",
+        "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
+      ],
+      "id": 106
+    },
+    {
+      "title": "black Perfume",
+      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+      "price": 40,
+      "discountPercentage": 15.66,
+      "rating": 4,
+      "stock": 52,
+      "brand": "Royal_Mirage",
+      "category": "fragrances",
+      "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/12/1.jpg",
+        "https://i.dummyjson.com/data/products/12/2.jpg",
+        "https://i.dummyjson.com/data/products/12/3.png",
+        "https://i.dummyjson.com/data/products/12/4.jpg",
+        "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
+      ],
+      "id": 107
+    },
+    {
+      "title": "black Perfume",
+      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+      "price": 40,
+      "discountPercentage": 15.66,
+      "rating": 4,
+      "stock": 52,
+      "brand": "Royal_Mirage",
+      "category": "fragrances",
+      "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/12/1.jpg",
+        "https://i.dummyjson.com/data/products/12/2.jpg",
+        "https://i.dummyjson.com/data/products/12/3.png",
+        "https://i.dummyjson.com/data/products/12/4.jpg",
+        "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
+      ],
+      "id": 108
+    },
+    {
+      "title": "black Perfume",
+      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+      "price": 40,
+      "discountPercentage": 15.66,
+      "rating": 4,
+      "stock": 52,
+      "brand": "Royal_Mirage",
+      "category": "fragrances",
+      "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/12/1.jpg",
+        "https://i.dummyjson.com/data/products/12/2.jpg",
+        "https://i.dummyjson.com/data/products/12/3.png",
+        "https://i.dummyjson.com/data/products/12/4.jpg",
+        "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
+      ],
+      "id": 109
     }
   ],
   "brands": [

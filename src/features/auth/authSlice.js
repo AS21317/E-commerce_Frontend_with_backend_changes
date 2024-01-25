@@ -29,10 +29,18 @@ export const signOutAsync = createAsyncThunk(
 
 export const checkUserAsync = createAsyncThunk(
   'user/checkUser',
-  async (loginInfo) => {
+  async (loginInfo, {rejectWithValue}) => {
+   try{
     const response = await checkUser(loginInfo);
     // The value we return becomes the `fulfilled` action payload
     return response.data;
+   }
+  //  Backend ke error messages yha catch ho jayenge 
+   catch(err){
+    console.log(err);
+    return rejectWithValue(err)  // its a inbuilt function to catch error and put it in action.payload
+  
+   }
   }
 );
 
@@ -80,7 +88,7 @@ export const counterSlice = createSlice({
       })
       .addCase(checkUserAsync.rejected, (state, action) => {
         state.status = 'idle';
-        state.error = action.error
+        state.error = action.payload
       })
       .addCase(updateUserAsync.pending, (state,action) => {
         state.status = 'loading';

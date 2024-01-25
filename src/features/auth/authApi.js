@@ -2,7 +2,7 @@
 
 export function createUser(userData) {
   return new Promise(async (resolve) => {
-    const response = await fetch('http://localhost:8080/users', {
+    const response = await fetch('http://localhost:8080/auth/signup', {
       method: 'POST',
       body: JSON.stringify(userData),
       headers: { 'content-type': 'application/json' },
@@ -26,27 +26,33 @@ export function signOut(userid) {
 
 export function checkUser(loginInfo) {
   return new Promise(async (resolve, reject) => {
-    const email = loginInfo.email;
-    const password = loginInfo.password;
-    const response = await fetch('http://localhost:8080/users?email='+email
-   );
+
+ 
+try{
+  const response = await fetch('http://localhost:8080/auth/login ',{
+    method: 'POST',
+    body: JSON.stringify(loginInfo),
+    headers: { 'content-type': 'application/json' },
+
+  });
+    // found that 401 bhi try ke ander ek successfull case hai , means server ka error code ka error nhi ho pa rha hai , so we use res.ok 
+
+  if(response.ok)
+  {
     const data = await response.json();
     console.log("data after searching the given email to server: ",data);
-    if(data.length){
-
-
-      if(password ===data[0].password){
-
-        resolve({ data:data[0] });
-      }
-      else{
-      reject({message: "wrong credentials "})
-
-      }
-    } else {
-      reject({message: "User not Found"})
-    }
-  });
+      
+    resolve({data})   // data ko as a object hi send krna hai , otherwise resolve nhi hoga 
+  }
+  else{
+    const err = await response.json();
+    reject(err)  // ye error backend se aayegi with 401 status , and we need to catch it in asyncThunk and send it in action error of thunk
+  }
+  
+} catch(err){
+  reject(err)
+}
+  }) ;
 }
 
 

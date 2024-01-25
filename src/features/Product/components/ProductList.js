@@ -5,7 +5,7 @@ import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronLeftIcon, ChevronRightIcon,StarIcon } from "@heroicons/react/20/solid";
 import { selectAllProducts,fetchAllProductsAsync,fetchAllBrandsAsync,fetchAllCategoriesAsync, fetchAllProductsByFiltersAsync, selectTotalItems, selectAllBrands, selectAllCategories, selectProductListStatus } from "../ProductSlice";
-import { ITEM_PER_PAGE, discountedPrice } from "../../../app/constant";
+import { ITEM_PER_PAGE,  } from "../../../app/constant";
 import { Grid } from 'react-loader-spinner'
 
 
@@ -502,7 +502,7 @@ function ProductGrid({products,filters,status}){
               </div>
               <div>
               <p className="text-sm font-medium text-gray-900">
-               ${Math.round(discountedPrice(product))}
+               ${Math.round((product.price))}
               </p>
               <p className="text-sm  line-through font-medium text-gray-700">
                ${product.price}

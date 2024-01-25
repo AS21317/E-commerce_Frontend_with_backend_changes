@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { fetchAllOrdersAsync,selectTotalOrdersCount,selectTotalOrders, updateOrderAsync } from '../../order/orderSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { ITEM_PER_PAGE, discountedPrice } from '../../../app/constant'
 import { PencilIcon ,EyeIcon,ArrowDownIcon,ArrowUpIcon} from "@heroicons/react/24/outline";
 import Pagination from '../../common/pagination';
-
+import { ITEM_PER_PAGE } from '../../../app/constant';
 
 const AdminOrders = () => {
     const dispatch = useDispatch()
@@ -123,7 +122,7 @@ const AdminOrders = () => {
                   <td className="py-3 px-6 text-left">
                  {order.items?.map(item=><div className="flex items-center">
                       
-                      <span>$ {discountedPrice(item) } </span>
+                      <span>$ {(item.product.price) } </span>
                     </div>
                   )}
                   </td>

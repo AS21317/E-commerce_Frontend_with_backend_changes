@@ -11,7 +11,6 @@ import { useForm } from 'react-hook-form'
 import { selectLoggedInUser, updateUserAsync } from '../features/auth/authSlice'
 import { createOrderAsync, selectCurrentOrder } from '../features/order/orderSlice'
 import { selectUserInfo } from '../features/user/userSlice'
-import { discountedPrice } from '../app/constant'
 
 
 
@@ -29,11 +28,11 @@ const Checkout = () => {
 
     const items  = useSelector(selectCartItems)
     const dispatch = useDispatch()
-    const totalAmount = items.reduce((amount,item)=>discountedPrice(item)*item.quantity +amount,0)
+    const totalAmount = items.reduce((amount,item)=>(item.product.price)*item.quantity +amount,0)
     const totalItems = items.reduce((total,item)=>item.quantity +total,0)
      
     const handleQuantity=(e,item)=>{
-      dispatch(updateCartAsync({...item, quantity:+e.target.value}))
+      dispatch(updateCartAsync({id:item.id, quantity:+e.target.value}))  // only quantity update krni hai to bs id send kr do kam ho jayega 
   
     }
   
@@ -53,7 +52,7 @@ const Checkout = () => {
 
 
     const handleOrder =(e)=>{
-      const order ={items,totalAmount,totalItems,user,paymentMethod,selectedAddress, status:'pending'}
+      const order ={items,totalAmount,totalItems,user:user.id,paymentMethod,selectedAddress, status:'pending'}
       dispatch(createOrderAsync(order))
       // setPaymentMethod(e.target.value)
 
@@ -321,8 +320,8 @@ console.log( "In checkzout current User info is : ", user);
           <li key={item.id} className="flex  mb-10 py-6">
             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
               <img
-                src={item.thumbnail}
-                alt={item.title}
+                src={item.product.thumbnail}
+                alt={item.product.title}
                 className="h-full w-full object-cover object-center"
               />
             </div>
@@ -331,11 +330,11 @@ console.log( "In checkzout current User info is : ", user);
               <div>
                 <div className="flex justify-between text-base font-medium text-gray-900">
                   <h3>
-                    <a href={item.href}>{item.title}</a>
+                    <a href={item.product.id}>{item.product.title}</a>
                   </h3>
-                  <p className="ml-4">${discountedPrice(item)}</p>
+                  <p className="ml-4">${(item.product.price)}</p>
                 </div>
-                <p className="mt-1 text-sm text-gray-500">{item.brand}</p>
+                <p className="mt-1 text-sm text-gray-500">{item.product.brand}</p>
               </div>
               <div className="flex flex-1 items-end justify-between text-sm">
                 <div className="text-gray-500"> 
